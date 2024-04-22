@@ -7,6 +7,27 @@ import argparse
 
 def main():
     print("Welcome to EcoTracker!")
+    cont = True
+    print("type exit to quit at any time")
+    while cont:
+        steps = input("Enter average number of steps taken per day: ")
+        if steps.strip() != "exit":
+            sleep = input("Enter average number of hours of sleep per night: ")
+            if sleep.strip() != "exit":
+                height = input("Enter height in inches: ")
+                if height.strip() != "exit":
+                    weight = input("Enter weight in pounds: ")
+                else: 
+                    cont = False
+                    print("Exiting)
+            else: 
+                cont = False
+                print("Exiting)
+        else:
+            cont = False
+            print("Exiting)
+        
+
     # Example user data; in a real app, this would come from user input or a database
     user_data = {
         'transport': {'car': 50, 'bike': 5, 'public': 20},
@@ -17,4 +38,4 @@ def main():
 # Statement to call main and start the program
 
 if __name__ == "__main__":
-    pass
+    main()
