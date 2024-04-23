@@ -1,37 +1,26 @@
-"""This will contain the functions and classes neccessary for creating a file 
-for the user containing the corresponding health insights based on the info given."""
+#Class definitions for 
 
-def something():
+class HealthData:
 
-    """
-    Calculates the estimated carbon footprint based on user input data.
-    Args:
-        transport_data (dict): User transportation habits.
-        energy_data (dict): User home energy consumption.
-        diet_data (dict): User dietary preferences.
-    Returns:
-        float: Estimated carbon footprint in kilograms of CO2 equivalent.
-    """
-    # Placeholder for simplicity; implement actual calculations based on data
-    return 1000.0
+    def __init__(self, steps, sleep, height, weight):
+        self.steps = steps
+        self.sleep = sleep
+        self.height = height
+        self.weight = weight
+    
+    def __str__(self):
+        line1 = "Steps: " + str(self.steps)
+        line2 = "Sleep: " + str(self.sleep)
+        line3 = "Height: " + str(self.height)
+        line4 = "Weight: " + str(self.weight)
+        line5 = "BMI: " + str(self.calculateBMI())
+        return line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5
 
+    def calculateBMI(self) -> float:
+        weightKg = float(float(self.weight)/(2.205))
+        heightMeters = float(float(self.height)*0.0254)
+        return float(weightKg/ (heightMeters ** 2))
 
-def generate_recommendations():
-
-    """
-    Generates eco-friendly recommendations based on the user's carbon footprint.
-    Args:
-        footprint (float): The user's carbon footprint.
-    Returns:
-        list: A list of personalized recommendations.
-    """
-
-    recommendations = []
-    #if footprint > 1000:
-        #recommendations.append("Consider using public transportation more frequently.")
-    # Add more recommendations based on footprint
-    return recommendations
-
-
+    
 
 

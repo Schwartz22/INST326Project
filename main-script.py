@@ -2,7 +2,7 @@
 and creating a file for the user that contains the analysis of the input using classes and functions. """
 import sys
 import argparse
-
+from insights import HealthData
 # Main function to enter the input cycle for the program
 
 def main():
@@ -19,6 +19,8 @@ def main():
                     weight = input("Enter weight in pounds: ")
                     if weight.strip() != "exit":
                         cont = False
+                        data = HealthData(steps, sleep, height, weight)
+                        print(data)
                     else:
                         cont = False
                         print("Exiting")
