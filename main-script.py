@@ -6,7 +6,7 @@ import argparse
 # Main function to enter the input cycle for the program
 
 def main():
-    print("Welcome to EcoTracker!")
+    print("Welcome to HealthTracker!")
     cont = True
     print("type exit to quit at any time")
     while cont:
@@ -18,7 +18,7 @@ def main():
                 if height.strip() != "exit":
                     weight = input("Enter weight in pounds: ")
                     if weight.strip() != "exit":
-                        pass
+                        cont = False
                     else:
                         cont = False
                         print("Exiting")
@@ -33,7 +33,6 @@ def main():
             print("Exiting")
         
 
-    # Example user data; in a real app, this would come from user input or a database
 
 
 # Statement to call main and start the program

@@ -1,7 +1,7 @@
 """This will contain the functions and classes neccessary for creating a file 
 for the user containing the corresponding health insights based on the info given."""
 
-def calculate_carbon_footprint():
+def something():
 
     """
     Calculates the estimated carbon footprint based on user input data.
