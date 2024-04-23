@@ -1,15 +1,15 @@
 #Class definitions for 
-# Class to manage and represent health-related data for an individual - Ethan
+# Class to manage and represent health-related data for an individual 
 class HealthData:
 
-    # Constructor to initialize the HealthData object with steps, sleep, height, and weight - Ethan
+    # Constructor to initialize the HealthData object with steps, sleep, height, and weight
     def __init__(self, steps, sleep, height, weight):
         self.steps = steps
         self.sleep = sleep
         self.height = height
         self.weight = weight
     
-    # Special method to return a string representation of the HealthData object - Ethan
+    # Special method to return a string representation of the HealthData object 
     def __str__(self):
         line1 = "Steps: " + str(self.steps)
         line2 = "Sleep: " + str(self.sleep)
@@ -18,7 +18,7 @@ class HealthData:
         line5 = "BMI: " + str(self.calculateBMI())
         return line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5
 
-    # Method to calculate and return the Body Mass Index (BMI) - Ethan
+    # Method to calculate and return the Body Mass Index (BMI) 
     def calculateBMI(self) -> float:
         weightKg = float(float(self.weight)/(2.205))
         heightMeters = float(float(self.height)*0.0254)

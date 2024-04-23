@@ -4,10 +4,11 @@ import sys
 import argparse
 from insights import HealthData
 # Main function to enter the input cycle for the program
+# We all worked on the main script together
 
 def main():
     print("Welcome to HealthTracker!")
-    cont = True
+    cont = True # Control variable for the main input loop
     print("type exit to quit at any time")
     while cont:
         steps = input("Enter average number of steps taken per day: ")
@@ -20,9 +21,9 @@ def main():
                     if weight.strip() != "exit":
                         cont = False
                         data = HealthData(steps, sleep, height, weight)
-                        print(data)
+                        print(data) # Print the data and calculated BMI using the object's __str__ method
                     else:
-                        cont = False
+                        cont = False # Exit loop if user types 'exit'
                         print("Exiting")
                 else: 
                     cont = False
