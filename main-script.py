@@ -17,22 +17,23 @@ def main():
                 height = input("Enter height in inches: ")
                 if height.strip() != "exit":
                     weight = input("Enter weight in pounds: ")
+                    if weight.strip() != "exit":
+                        pass
+                    else:
+                        cont = False
+                        print("Exiting")
                 else: 
                     cont = False
-                    print("Exiting)
+                    print("Exiting")
             else: 
                 cont = False
-                print("Exiting)
+                print("Exiting")
         else:
             cont = False
-            print("Exiting)
+            print("Exiting")
         
 
     # Example user data; in a real app, this would come from user input or a database
-    user_data = {
-        'transport': {'car': 50, 'bike': 5, 'public': 20},
-        'energy': {'electricity': 200, 'gas': 100},
-        'diet': {'meat': 2, 'vegetables': 20}
 
 
 # Statement to call main and start the program
