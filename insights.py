@@ -22,7 +22,7 @@ class HealthData:
     def calculateBMI(self) -> float:
         weightKg = float(float(self.weight)/(2.205))
         heightMeters = float(float(self.height)*0.0254)
-        return float(weightKg/ (heightMeters ** 2))
+        return round(float(weightKg/ (heightMeters ** 2)), 1)
 
     
 

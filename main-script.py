@@ -3,6 +3,7 @@ and creating a file for the user that contains the analysis of the input using c
 import sys
 import argparse
 from insights import HealthData
+import unit_tests
 # Main function to enter the input cycle for the program
 # We all worked on the main script together
 
@@ -37,8 +38,11 @@ def main():
         
 
 
+    
+
 
 # Statement to call main and start the program
 
 if __name__ == "__main__":
     main()
+    unit_tests.test_bmi()
