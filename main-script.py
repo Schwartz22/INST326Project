@@ -27,6 +27,7 @@ def main():
                             data = HealthData(steps, sleep, height, weight, age)
                             print(data) # Print the data and calculated BMI using the object's __str__ method
                             option = input("Enter 1 for printing recommendations here, or enter 2 to make a file in the current directory containing the recommendations.")
+                            print("\n")
                             if option.strip() != "exit":
                                 if option == "1":
                                     print(generate_recommendations(data))
