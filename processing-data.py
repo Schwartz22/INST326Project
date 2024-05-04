@@ -31,15 +31,17 @@ def generate_recommendations(data: HealthData):
         steps_rec = "You are doing great on steps, staying at around 10,000 steps per day is a great way to keep a healthy lifestyle."
 
     if sleep < 7:
-        sleep_rec = ""
+        sleep_rec = "The recommended minimum number of sleep is around 7 hours per night, if there is time in your lifestyle, more sleep is always very beneficial to overall health."
+    elif sleep > 10:
+        sleep_rec = "The recommended maximum number of sleep is around 10 hours per night, consult with your primary physician about good sleeping habits."
     else:
-        sleep_rec = ""
+        sleep_rec = "The amount of sleep you currently have per night is adequate keep up the good work."
     if bmi < 20.0:
-        general_rec = ""
+        general_rec = "Your BMI is in the under section, this could mean more calories or less activity per day, however everyone is different consult your primary physician before making any large lifestyle changes."
     elif bmi > 25.0:
-        general_rec = ""
+        general_rec = "Your BMI is in the overweight section, this could mean more steps or less calories per day, however everyone is different consult your primary physician before making any large lifestyle changes."
     else:
-        general_rec = ""
+        general_rec = "Your BMI is at a good place keep up the good work."
     
 
 """
