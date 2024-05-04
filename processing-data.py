@@ -29,7 +29,6 @@ def generate_recommendations(data: HealthData):
         steps_rec = "8,000 steps is usually recommended for all ages to promote a healthy lifestyle." + "\n" + "Trying to go on at least one walk a day will help to increase steps and activity."
     else: 
         steps_rec = "You are doing great on steps, staying at around 10,000 steps per day is a great way to keep a healthy lifestyle."
-
     if sleep < 7:
         sleep_rec = "The recommended minimum number of sleep is around 7 hours per night, if there is time in your lifestyle, more sleep is always very beneficial to overall health."
     elif sleep > 10:
@@ -43,6 +42,9 @@ def generate_recommendations(data: HealthData):
     else:
         general_rec = "Your BMI is at a good place keep up the good work."
     
+
+    return "Sleep Recommendation: " + sleep_rec + "\n" + "Steps Recommendation: " + steps_rec + "\n" + "General Recommendation: " + general_rec
+
 
 """
 This file will be for processing the data and will contain classes and functions 
