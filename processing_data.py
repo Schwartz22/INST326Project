@@ -17,8 +17,8 @@ def makeFile():
 
 
 def generate_recommendations(data: HealthData):
-    sleep = data.sleep
-    steps = data.steps
+    sleep = int(data.sleep)
+    steps = int(data.steps)
     bmi = data.calculateBMI()
     
     sleep_rec = ""

@@ -4,6 +4,7 @@ import sys
 import argparse
 from insights import HealthData
 import unit_tests
+from processing_data import generate_recommendations
 # Main function to enter the input cycle for the program
 # We all worked on the main script together
 
@@ -25,6 +26,19 @@ def main():
                             cont = False
                             data = HealthData(steps, sleep, height, weight, age)
                             print(data) # Print the data and calculated BMI using the object's __str__ method
+                            option = input("Enter 1 for printing recommendations here, or enter 2 to make a file in the current directory containing the recommendations.")
+                            if option.strip() != "exit":
+                                if option == "1":
+                                    print(generate_recommendations(data))
+                                elif option == "2":
+                                    pass
+                                else:
+                                    cont = False
+                                    print("invalid command")
+
+                            else:
+                                cont = False
+                                print("Exiting")
                         else:
                             cont = False # Exit loop if user types 'exit'
                             print("Exiting")
