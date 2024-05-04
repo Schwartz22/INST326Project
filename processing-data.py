@@ -1,6 +1,6 @@
 """This will contain the functions and classes neccessary for creating a file 
 for the user containing the corresponding health insights based on the info given."""
-
+from insights import HealthData
 def makeFile():
 
     """
@@ -16,21 +16,32 @@ def makeFile():
     return 1000.0
 
 
-def generate_recommendations():
+def generate_recommendations(data: HealthData):
+    sleep = data.sleep
+    steps = data.steps
+    bmi = data.calculateBMI()
+    
+    sleep_rec = ""
+    steps_rec = ""
+    general_rec = ""
 
-    """
-    Generates eco-friendly recommendations based on the user's carbon footprint.
-    Args:
-        footprint (float): The user's carbon footprint.
-    Returns:
-        list: A list of personalized recommendations.
-    """
+    if steps < 8000:
+        steps_rec = "8,000 steps is usually recommended for all ages to promote a healthy lifestyle." + "\n" + "Trying to go on at least one walk a day will help to increase steps and activity."
+    else: 
+        steps_rec = "You are doing great on steps, staying at around 10,000 steps per day is a great way to keep a healthy lifestyle."
 
-    recommendations = []
-    #if footprint > 1000:
-        #recommendations.append("Consider using public transportation more frequently.")
-    # Add more recommendations based on footprint
-    return recommendations
+    if sleep < 7:
+        sleep_rec = ""
+    else:
+        sleep_rec = ""
+    if bmi < 20.0:
+        general_rec = ""
+    elif bmi > 25.0:
+        general_rec = ""
+    else:
+        general_rec = ""
+    
+
 """
 This file will be for processing the data and will contain classes and functions 
 neccessary for organization of the data from the user

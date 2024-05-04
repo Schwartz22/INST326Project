@@ -14,15 +14,20 @@ def main():
     while cont:
         steps = input("Enter average number of steps taken per day: ")
         if steps.strip() != "exit":
-            sleep = input("Enter average number of hours of sleep per night: ")
+            sleep = input("Enter average number of hours of sleep per night rounded to a whole number: ")
             if sleep.strip() != "exit":
                 height = input("Enter height in inches: ")
                 if height.strip() != "exit":
                     weight = input("Enter weight in pounds: ")
                     if weight.strip() != "exit":
-                        cont = False
-                        data = HealthData(steps, sleep, height, weight)
-                        print(data) # Print the data and calculated BMI using the object's __str__ method
+                        age = input("Enter age in years: ")
+                        if age.strip() != "exit":
+                            cont = False
+                            data = HealthData(steps, sleep, height, weight, age)
+                            print(data) # Print the data and calculated BMI using the object's __str__ method
+                        else:
+                            cont = False # Exit loop if user types 'exit'
+                            print("Exiting")
                     else:
                         cont = False # Exit loop if user types 'exit'
                         print("Exiting")
@@ -46,3 +51,4 @@ def main():
 if __name__ == "__main__":
     main()
     unit_tests.test_bmi()
+    unit_tests.test_bmi2()
