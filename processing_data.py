@@ -1,19 +1,14 @@
 """This will contain the functions and classes neccessary for creating a file 
 for the user containing the corresponding health insights based on the info given."""
 from insights import HealthData
-def makeFile():
-
-    """
-    Calculates the estimated carbon footprint based on user input data.
-    Args:
-        transport_data (dict): User transportation habits.
-        energy_data (dict): User home energy consumption.
-        diet_data (dict): User dietary preferences.
-    Returns:
-        float: Estimated carbon footprint in kilograms of CO2 equivalent.
-    """
-    # Placeholder for simplicity; implement actual calculations based on data
-    return 1000.0
+def makeFile(data: HealthData):
+    worked = False
+    string = generate_recommendations(data)
+    with open('recommendations.txt', 'w') as file:
+        file.write(string)
+        file.close()
+        worked = True
+    return worked
 
 
 def generate_recommendations(data: HealthData):
