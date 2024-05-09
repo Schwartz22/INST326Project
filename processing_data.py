@@ -1,8 +1,3 @@
-"""
-This module provides functionalities to process health data from users and generate personalized
-health recommendations, which can then be saved to a file.
-"""
-
 from insights import HealthData
 
 def makeFile(data: HealthData) -> bool:

@@ -1,10 +1,3 @@
-"""
-This script is the main entry point for the HealthTracker application. It interacts
-with the user to collect health data and provides options to display health
-recommendations directly or save them to a file. It also triggers some unit tests to
-ensure functionality is correct.
-"""
-
 import sys
 import argparse
 from insights import HealthData
