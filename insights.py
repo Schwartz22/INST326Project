@@ -47,3 +47,13 @@ class HealthData:
         weightKg = float(float(self.weight)/(2.205))  # Convert pounds to kilograms
         heightMeters = float(float(self.height)*0.0254)  # Convert inches to meters
         return round(float(weightKg / (heightMeters ** 2)), 1)
+
+    def calorie_calcM(self):
+        weightKg = float(float(self.weight)/(2.205))
+        heightCM = float(float(self.height)*0.0254) * 100
+        return round((13.397 * weightKg) + (4.799 * heightCM) - (5.677 * float(self.age)) + 88.362, 0)
+
+    def calorie_calcW(self):
+        weightKg = float(float(self.weight)/(2.205))
+        heightCM = float(float(self.height)*0.0254) * 100
+        return round((9.247 * weightKg) + (3.098 * heightCM) - (4.330 * float(self.age)) + 447.593, 0)

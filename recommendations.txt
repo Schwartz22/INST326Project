@@ -1,3 +1,4 @@
-Sleep Recommendation: The amount of sleep you currently have per night is adequate keep up the good work.
+Sleep Recommendation: The amount of sleep you currently have per night is adequate. Keep up the good work.
 Steps Recommendation: You are doing great on steps, staying at around 10,000 steps per day is a great way to keep a healthy lifestyle.
-General Recommendation: Your BMI is at a good place keep up the good work.
+General Recommendation: Your BMI is at a good place. Keep up the good work.If you are a man your Basal Metablolic Rate is: 1782.0
+If you are a woman it is: 1571.0

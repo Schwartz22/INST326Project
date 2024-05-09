@@ -1,4 +1,6 @@
 from insights import HealthData
+import os
+
 
 def makeFile(data: HealthData) -> bool:
     """
@@ -9,6 +11,8 @@ def makeFile(data: HealthData) -> bool:
     :return: True if the file was successfully created and written, False otherwise.
     """
     worked = False
+    if os.path.exists('recommendations.txt'):
+        os.remove('recommendations.txt')
     string = generate_recommendations(data)
     with open('recommendations.txt', 'w') as file:
         file.write(string)
@@ -27,10 +31,17 @@ def generate_recommendations(data: HealthData) -> str:
     sleep = int(data.sleep)
     steps = int(data.steps)
     bmi = data.calculateBMI()
+    age = int(data.age)
 
+    age_rec = ""
     sleep_rec = ""
     steps_rec = ""
     general_rec = ""
+
+    if age < 18:
+        age_rec = "Those under 18 should always discuss with their parents/legal guardian before taking any health advice." + "\n"
+
+    calorie_rec = "If you are a man your Basal Metablolic Rate is: " + str(data.calorie_calcM()) + "\n" + "If you are a woman it is: " + str(data.calorie_calcW()) + "\n"
 
     if steps < 8000:
         steps_rec = ("8,000 steps is usually recommended for all ages to promote a healthy lifestyle."
@@ -55,7 +66,7 @@ def generate_recommendations(data: HealthData) -> str:
     else:
         general_rec = "Your BMI is at a good place. Keep up the good work."
 
-    return "Sleep Recommendation: " + sleep_rec + "\nSteps Recommendation: " + steps_rec + "\nGeneral Recommendation: " + general_rec
+    return age_rec + "Sleep Recommendation: " + sleep_rec + "\nSteps Recommendation: " + steps_rec + "\nGeneral Recommendation: " + general_rec + calorie_rec
 
 """
 This file contains classes and functions necessary for organizing and processing the data received from the user.
